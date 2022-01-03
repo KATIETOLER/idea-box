@@ -5,19 +5,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap" rel="stylesheet">
   </head>
   <body>
-    <nav>IdeaBox</nav>
+    <nav>
+      <h3>IdeaBox</h3>
+      <div class="filter-box">
+        <p>Filter Starred Ideas</p>
+        <button class="show-starred-btn" id="starred-ideas">Show Starred Ideas</button>
+      </div>
+    </nav>
     <main>
       <form>
         <label for="title">Title</label>
         <p>
-          <input type="text" id="title">
+          <input type="text" class="inputs" id="title-input">
         </p>
         <label for="body">Body</label>
         <p>
-          <input type="text" id="Body">
+          <input type="text" class="inputs" id="body-input">
         </p>
-        <button id="save-idea">Save</button>
-        <input type="text" placeholder="Search Ideas" id="search-ideas">
+        <button id="save-idea">Save</button> <br />
+        <div class="search-bar">
+          <button class="search-button">
+            <img src="./assets/search.svg" class="search-icon" alt="Search Icon"/>
+          </button>
+          <input type="text" class="inputs" placeholder="Search ideas" id="search-ideas">
+        </div>
       </form>
       <section id="card-area">Card Area</section>
       <div class="idea-card">Idea card</div>
