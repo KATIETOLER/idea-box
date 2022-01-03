@@ -1,13 +1,17 @@
-html{
+html {
   font-family: "Open Sans", bold;
   height: 100%;
   background-color: #A9AAD2;
 }
 
-nav{
-  /* position: fixed;
-  top: 0;
-  left: 0; */
+body {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+nav {
   height: 100%;
   background-color: #1F1F3D;
   border-style: solid;
@@ -16,23 +20,32 @@ nav{
   padding: 8vw;
 }
 
-main{
+main {
   display: flex;
+  flex-direction: column;
   align-content: flex-end;
   height: 100%;
 }
 
-body{
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  height: 100vw;
-}
-
-form{
+form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 75vw;
-  height:
+  width: 79vw;
+  height: auto;
+  margin-bottom: 6vw;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  background-color: #EAEAF4;
+  width: 79vw;
+  height: 100%;
+  flex-grow: 1;
+}
+
+.idea-card {
+  display: flex;
+
 }
