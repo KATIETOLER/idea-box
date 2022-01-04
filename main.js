@@ -4,6 +4,11 @@ var bodyInput = document.getElementById('body-input');
 var ideaTitle = document.querySelector('.idea-title');
 var ideaBody = document.querySelector('.idea-body');
 var ideasGrid = document.querySelector('.saved-cards-grid');
+var topSection = document.querySelector('.top-section')
+var star = document.querySelector('.top-image')
+var activeStar = document.querySelector('.star-active')
+
+
 //--------------- Buttons ----------------
 var starredIdeasBtn = document.getElementById('starred-ideas');
 var saveIdeaBtn = document.getElementById('save-idea');
@@ -12,6 +17,14 @@ var searchBtn = document.querySelector('.search-button');
 var ideas = [];
 //---------------- Event Listeners -------------
 saveIdeaBtn.addEventListener('click', saveIdea);
+
+topSection.addEventListener('click', function(event) {
+  for(var i = 0; i < idea.length; i++){
+    if(event.target.id === ideas[i].id){
+      toggleFavorite()
+    }
+  }
+})
 //---------------- Functions -------------------
 function saveIdea(event) {
   event.preventDefault()
@@ -32,8 +45,9 @@ function displayIdeas() {
     for (var i = 0; i < ideas.length; i++) {
       ideasGrid.innerHTML +=
       `<div class="idea-card" id="${ideas[i].id}" alt="Idea Card">
-        <div class="top-section">
+        <div class="top-section" id="${ideas[i].id}">
           <img src="./assets/star.svg" class="top-image" alt="Star"/>
+          <img src="./assets/star-active.svg" class="top-image hidden star-active" alt="Star"/>
           <img src="./assets/delete.svg" class="top-image" alt="Delete X"/>
         </div>
         <div class="middle-section">
@@ -49,9 +63,18 @@ function displayIdeas() {
   }
 
 
-
-
-
+  function toggleFavorite(event) {
+    for(var i = 0; i < ideas.length; i++){
+      if(ideas[i].starred === false) {
+        show(activeStar)
+        hide(star)
+        ideas[i].starred = true;
+      }
+      ideas[i].starred = false;
+      show(star)
+      hide(activeStar)
+    }
+  }
 
 
 
