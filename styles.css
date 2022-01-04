@@ -50,7 +50,7 @@ form {
   width: 79vw;
   height: auto;
   margin-bottom: 2vw;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 section {
@@ -62,15 +62,13 @@ section {
   flex-grow: 1;
 }
 
-.labels{
-  display: flex;
-  align-items: flex-end;
-}
-
 .idea-card {
   display: flex;
 }
 
+label {
+  width: 35vw;
+}
 
 button {
   background-color: #1F1F3D;
