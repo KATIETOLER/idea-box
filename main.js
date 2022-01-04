@@ -1,41 +1,61 @@
 //---------------- Query Selectors -------------
-
 var titleInput = document.getElementById('title-input');
 var bodyInput = document.getElementById('body-input');
-
-
+var ideaTitle = document.querySelector('.idea-title');
+var ideaBody = document.querySelector('.idea-body');
+var ideasGrid = document.querySelector('.saved-cards-grid');
 //--------------- Buttons ----------------
-
 var starredIdeasBtn = document.getElementById('starred-ideas');
 var saveIdeaBtn = document.getElementById('save-idea');
 var searchBtn = document.querySelector('.search-button');
-
-var ideaTitle = document.querySelector('.idea-title')
-var ideaBody = document.querySelector('.idea-body')
 //---------------- GLobal Variables ------------
-
 var ideas = [];
-
-
-
-
 //---------------- Event Listeners -------------
-
 saveIdeaBtn.addEventListener('click', saveIdea);
-
-
-
-
-
 //---------------- Functions -------------------
-
 function saveIdea(event) {
   event.preventDefault()
   var newIdea = new Idea(titleInput.value, bodyInput.value);
   ideas.push(newIdea);
-  console.log(ideas)
+  titleInput.value = '';
+  bodyInput.value = '';
+  displayIdeas();
 }
 
 function showIdeaCard() {
 
 }
+
+
+function displayIdeas() {
+    ideasGrid.innerHTML = '';
+    for (var i = 0; i < ideas.length; i++) {
+      ideasGrid.innerHTML +=
+      `<div class="idea-card" id="${ideas[i].id}" alt="Idea Card">
+        <div class="top-section">
+          <img src="./assets/star.svg" class="top-image" alt="Star"/>
+          <img src="./assets/delete.svg" class="top-image" alt="Delete X"/>
+        </div>
+        <div class="middle-section">
+          <h3 class="idea-title">${ideas[i].title}</h3>
+          <p class="idea-body">${ideas[i].body}</p>
+        </div>
+        <div class="bottom-section">Comment
+          <img src="./assets/comment.svg" class="top-image" alt="Add"/>
+          <!-- <p>Comment</p> -->
+        </div>
+      </div>`
+    };
+  }
+
+
+
+
+
+
+
+
+// ideasGrid.innerHTML += `<section class="idea-card" id=${ideas[i].id}>
+// <h1>${savedPosters[i].title}</h1>
+// <h3>${savedPosters[i].quote}</h3></section>`;
+// };
