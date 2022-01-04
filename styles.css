@@ -63,12 +63,36 @@ section {
 
 .idea-card {
   display: flex;
+  flex-direction: column;
   width: 20vw;
   height: 30vw;
   border: solid;
   border-color: #1F1F3D;
   border-width: medium;
   background-color: white;
+  color: #1F1F3D;
+}
+
+.top-section {
+  display: flex;
+  justify-content: space-between;
+  align-items:flex-end;
+  width: 20vw;
+  height: 3vw;
+  background-color: #1F1F3D;
+}
+
+.bottom-section {
+  display: flex;
+  width: 20vw;
+  height: 3vw;
+  background-color: #5356A4;
+}
+
+
+.top-image {
+  height: 2.5vw;
+  width: 2.5vw;
 }
 
 label{
