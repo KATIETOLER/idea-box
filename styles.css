@@ -145,3 +145,10 @@ button {
   border-width: thin;
   border-color: #353567
 }
+
+.saved-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  padding: 20px;
+}
