@@ -25,7 +25,7 @@ nav {
   display: flex;
   flex-direction: column;
   padding: 1vw;
-  font-family: "Open Sans", bold;
+  /* font-family: "Open Sans", bold; */
   /* color: #A9AAD2; */
   /* padding: 8vw; */
 }
@@ -62,9 +62,14 @@ section {
   flex-grow: 1;
 }
 
+.labels{
+  display: flex;
+  align-items: flex-end;
+}
+
 .idea-card {
   display: flex;
-
+}
 
 
 button {
@@ -72,14 +77,14 @@ button {
   color: #FFFFFF;
   width: 35.5vw;
   height: 5vw;
-  border-radius: .7vw;
+  border-radius: .1vw;
   border-style: solid;
   cursor: pointer;
 }
 
 .inputs {
   border-style: solid;
-  border-radius: .3vw;
+  border-radius: .1vw;
   height: 3vw;
   width: 35vw;
 }
@@ -94,12 +99,20 @@ button {
 }
 
 .search-button {
+  border: none;
   width: 5vw;
 }
 
 .search-bar {
+  display: flex;
+  justify-content: center;
   height: 5vw;
-  width: 36vw;
+  width: 35.5vw;
+}
+
+#search-ideas{
+  height: 4.5vw;
+  width: 35vw;
 }
 
 .show-starred-btn {
