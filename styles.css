@@ -63,12 +63,17 @@ section {
 
 .idea-card {
   display: flex;
+  width: 20vw;
+  height: 30vw;
+  border: solid;
+  border-color: #1F1F3D;
+  border-width: medium;
+  background-color: white;
 }
-/* 
-label {
-  width: 35vw;
-} */
 
+label{
+  width: 35vw;
+}
 
 button {
   background-color: #1F1F3D;
