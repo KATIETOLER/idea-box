@@ -64,6 +64,8 @@ section {
 .idea-card {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
   width: 20vw;
   height: 30vw;
   border: solid;
@@ -84,8 +86,11 @@ section {
 
 .bottom-section {
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   width: 20vw;
   height: 3vw;
+  text-align:right;
   background-color: #5356A4;
 }
 
