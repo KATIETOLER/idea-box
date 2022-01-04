@@ -12,6 +12,10 @@ body {
   height: 100%;
 }
 
+h4 {
+  font-weight: bold;
+}
+
 nav {
   position: flex;
   top: 0;
@@ -25,16 +29,11 @@ nav {
   display: flex;
   flex-direction: column;
   padding: 1vw;
-  /* font-family: "Open Sans", bold; */
+
+  font-family: "Open Sans", light;
   /* color: #A9AAD2; */
   /* padding: 8vw; */
 }
-
-/*
-div{
-  border-style: solid;
-  border-color: #353567;
-} */
 
 main {
   display: flex;
@@ -65,10 +64,11 @@ section {
 .idea-card {
   display: flex;
 }
-
+/* 
 label {
   width: 35vw;
-}
+} */
+
 
 button {
   background-color: #1F1F3D;
@@ -113,15 +113,30 @@ button {
   width: 35vw;
 }
 
-.show-starred-btn {
-  padding: 3%;
+.filter-text {
+  font-size: small;
+  font-weight: bolder;
+  margin-bottom: 2vw;
+  color: #BFBFDD;
+  display: flex;
+  justify-content:space-between;
+}
+.nav-button {
+  font-family: "Open Sans", bold;
   font-size: medium;
+  font-weight: bolder;
   color: #E9E9F3;
   background-color: #5356A4;
-  font-family: "Open Sans", bold;
+  width: 20vw;
+  height: 3.5vw;
+  border-radius: .1vw;
 }
 
 .filter-box {
+  height: 11.5vw;
   border-top: solid;
+  border-width: thin;
   border-bottom: solid;
+  border-width: thin;
+  border-color: #353567
 }
