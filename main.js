@@ -18,8 +18,17 @@ var ideas = [];
 
 //---------------- Event Listeners -------------
 saveIdeaBtn.addEventListener('click', saveIdea);
-star.addEventListener('click', toggleFavorite);
-activeStar.addEventListener('click', toggleFavorite);
+// star.addEventListener('click', toggleFavorite);
+// activeStar.addEventListener('click', toggleFavorite);
+ideasGrid.addEventListener('click', function(event) {
+  if (event.target.id === 'star') {
+    console.log('click');
+  };
+  if (event.target.id === 'delete-x') {
+    console.log(`delete ${ideas.id}`);
+  }
+});
+
 
 //---------------- Functions -------------------
 function saveIdea(event) {
@@ -32,40 +41,40 @@ function saveIdea(event) {
 };
 
 function displayIdeas() {
-    ideasGrid.innerHTML = '';
-    for (var i = 0; i < ideas.length; i++) {
-      ideasGrid.innerHTML +=
-      `<div class="idea-card" id="${ideas[i].id}" alt="Idea Card">
-        <div class="top-section" id="${ideas[i].id}">
-          <img src="./assets/star.svg" class="top-image" alt="Star"/>
-          <img src="./assets/delete.svg" class="top-image" alt="Delete X"/>
-        </div>
-        <div class="middle-section">
-          <h3 class="idea-title">${ideas[i].title}</h3>
-          <p class="idea-body">${ideas[i].body}</p>
-        </div>
-        <div class="bottom-section"> Comment
-          <img src="./assets/comment.svg" class="top-image" alt="Add"/>
-          <!-- <p>Comment</p> -->
-        </div>
-      </div>`
+  ideasGrid.innerHTML = '';
+  for (var i = 0; i < ideas.length; i++) {
+    ideasGrid.innerHTML +=
+    `<div class="idea-card" id="${ideas[i].id}" alt="Idea Card">
+      <div class="top-section" id="${ideas[i].id}">
+        <img src="./assets/star.svg" class="top-image" id="star" alt="Star"/>
+        <img src="./assets/delete.svg" class="top-image" id="delete-x" alt="Delete X"/>
+      </div>
+      <div class="middle-section">
+        <h3 class="idea-title">${ideas[i].title}</h3>
+        <p class="idea-body">${ideas[i].body}</p>
+      </div>
+      <div class="bottom-section"> Comment
+        <img src="./assets/comment.svg" class="top-image" alt="Add"/>
+        <!-- <p>Comment</p> -->
+      </div>
+    </div>`
     };
   };
 
-  function toggleFavorite(event) {
-    for (var i = 0; i < ideas.length; i++) {
-      if (ideas[i].starred === false) {
-        show(activeStar);
-        hide(star);
-        ideas[i].starred = true;
-      };
-      if (ideas[i].starred = false) {
-        show(star);
-        hide(activeStar);
-        ideas[i].starred = true;
-      };
+function toggleFavorite(event) {
+  for (var i = 0; i < ideas.length; i++) {
+    if (ideas[i].starred === false) {
+      show(activeStar);
+      hide(star);
+      ideas[i].starred = true;
+    };
+    if (ideas[i].starred = false) {
+      show(star);
+      hide(activeStar);
+      ideas[i].starred = true;
     };
   };
+};
 
 function hide(element){
   element.classList.add("hidden");
