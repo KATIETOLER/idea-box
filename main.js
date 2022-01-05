@@ -5,8 +5,8 @@ var ideaTitle = document.querySelector('.idea-title');
 var ideaBody = document.querySelector('.idea-body');
 var ideasGrid = document.querySelector('.saved-cards-grid');
 var topSection = document.querySelector('.top-section');
-var star = document.querySelector('.top-image');
-var activeStar = document.querySelector('.star-active');
+var star = document.getElementById('top-image');
+var activeStar = document.getElementById('red-star');
 
 //--------------- Buttons ----------------
 var starredIdeasBtn = document.getElementById('starred-ideas');
@@ -21,14 +21,21 @@ saveIdeaBtn.addEventListener('click', saveIdea);
 // star.addEventListener('click', toggleFavorite);
 // activeStar.addEventListener('click', toggleFavorite);
 ideasGrid.addEventListener('click', function(event) {
-  if (event.target.id === 'star') {
-    console.log('click');
-  };
-  if (event.target.id === 'delete-x') {
-    console.log(`delete ${ideas.id}`);
-  }
-});
+  for (var i = 0; i < ideas.length; i++){
+    if (event.target.id === `star${ideas[i].id}`) {
+    // console.log('click');
+    toggleFavorite(`${ideas[i].id}`,`star${ideas[i].id}`)
+    };
 
+    if (event.target.id === `delete${ideas[i].id}`) {
+      ideas.splice(i, 1)
+      displayIdeas()
+    }
+  }
+})
+
+
+// console.log(`delete ${ideas[i].id}`);
 
 //---------------- Functions -------------------
 function saveIdea(event) {
@@ -46,8 +53,9 @@ function displayIdeas() {
     ideasGrid.innerHTML +=
     `<div class="idea-card" id="${ideas[i].id}" alt="Idea Card">
       <div class="top-section" id="${ideas[i].id}">
-        <img src="./assets/star.svg" class="top-image" id="star" alt="Star"/>
-        <img src="./assets/delete.svg" class="top-image" id="delete-x" alt="Delete X"/>
+        <img src="./assets/star.svg" class="top-image" id="star${ideas[i].id}" alt="Star"/>
+        <img src="./assets/star-active.svg" class="top-image hidden star-active" id="red-star" alt="Star"/>
+        <img src="./assets/delete.svg" class="top-image delete-x" id="delete${ideas[i].id}" alt="Delete X"/>
       </div>
       <div class="middle-section">
         <h3 class="idea-title">${ideas[i].title}</h3>
@@ -56,26 +64,39 @@ function displayIdeas() {
       <div class="bottom-section"> Comment
         <img src="./assets/comment.svg" class="top-image" alt="Add"/>
         <!-- <p>Comment</p> -->
-      </div>
-    </div>`
+      </div>`
+    // </div>
     };
   };
 
-function toggleFavorite(event) {
-  for (var i = 0; i < ideas.length; i++) {
-    if (ideas[i].starred === false) {
-      show(activeStar);
-      hide(star);
-      ideas[i].starred = true;
-    };
-    if (ideas[i].starred = false) {
-      show(star);
-      hide(activeStar);
-      ideas[i].starred = true;
-    };
-  };
-};
 
+  function toggleFavorite(id, starId){
+    for (var i = 0; i < ideas.length; i++){
+      if (id === ideas[i].id){
+        ideas[i].starred = !ideas[i].starred
+      }
+    }
+
+    
+    console.log(id, starId);
+  }
+
+// function toggleFavorite() {
+//   for (var i = 0; i < ideas.length; i++){
+//     if (ideas[i].starred === false) {
+//       show(activeStar);
+//       hide(star);
+//       ideas[i].starred = true;
+//     };
+//     if (ideas[i].starred = false) {
+//       show(star);
+//       hide(activeStar);
+//       ideas[i].starred = true;
+//     };
+//   };
+// }
+
+//
 function hide(element){
   element.classList.add("hidden");
 }
