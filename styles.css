@@ -65,9 +65,9 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   width: 20vw;
-  height: 30vw;
+  height: 20vw;
   border: solid;
   border-color: #1F1F3D;
   border-width: medium;
@@ -94,8 +94,10 @@ section {
   background-color: #5356A4;
 }
 
+.middle-section{
 
-.top-image {
+}
+.top-image, .star-active{
   height: 2.5vw;
   width: 2.5vw;
 }
@@ -122,6 +124,9 @@ button {
 }
 
 #body-input {
+  font-family: 'Open Sans';
+  border-width: .25vw;
+  width: 35vw;
   height: 10vw;
 }
 
@@ -183,6 +188,6 @@ button {
 }
 
 
-hidden{
+.hidden {
   display: none;
 }
