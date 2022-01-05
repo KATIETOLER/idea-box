@@ -62,7 +62,6 @@ function displayIdeas() {
     };
   }
 
-
   function toggleFavorite(event) {
     show(activeStar)
     hide(star)
