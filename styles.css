@@ -97,6 +97,7 @@ section {
 .middle-section{
 
 }
+
 .top-image, .star-active{
   height: 2.5vw;
   width: 2.5vw;
@@ -177,7 +178,7 @@ button {
   border-width: thin;
   border-bottom: solid;
   border-width: thin;
-  border-color: #353567
+  border-color: #353567;
 }
 
 .saved-cards-grid {
