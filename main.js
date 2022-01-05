@@ -17,14 +17,15 @@ var searchBtn = document.querySelector('.search-button');
 var ideas = [];
 //---------------- Event Listeners -------------
 saveIdeaBtn.addEventListener('click', saveIdea);
+star.addEventListener('click', toggleFavorite)
+// topSection.addEventListener('click', function(event) {
+//   for(var i = 0; i < idea.length; i++){
+//     if(event.target.id === ideas[i].id){
+//       toggleFavorite()
+//     }
+//   }
+// })
 
-topSection.addEventListener('click', function(event) {
-  for(var i = 0; i < idea.length; i++){
-    if(event.target.id === ideas[i].id){
-      toggleFavorite()
-    }
-  }
-})
 //---------------- Functions -------------------
 function saveIdea(event) {
   event.preventDefault()
@@ -47,14 +48,13 @@ function displayIdeas() {
       `<div class="idea-card" id="${ideas[i].id}" alt="Idea Card">
         <div class="top-section" id="${ideas[i].id}">
           <img src="./assets/star.svg" class="top-image" alt="Star"/>
-          <img src="./assets/star-active.svg" class="top-image hidden star-active" alt="Star"/>
           <img src="./assets/delete.svg" class="top-image" alt="Delete X"/>
         </div>
         <div class="middle-section">
           <h3 class="idea-title">${ideas[i].title}</h3>
           <p class="idea-body">${ideas[i].body}</p>
         </div>
-        <div class="bottom-section">Comment
+        <div class="bottom-section"> Comment
           <img src="./assets/comment.svg" class="top-image" alt="Add"/>
           <!-- <p>Comment</p> -->
         </div>
@@ -62,21 +62,30 @@ function displayIdeas() {
     };
   }
 
-
   function toggleFavorite(event) {
-    for(var i = 0; i < ideas.length; i++){
-      if(ideas[i].starred === false) {
-        show(activeStar)
-        hide(star)
-        ideas[i].starred = true;
-      }
-      ideas[i].starred = false;
-      show(star)
-      hide(activeStar)
-    }
+    show(activeStar)
+    hide(star)
+    // ideas[i].starred = true;
+    //
+    // for(var i = 0; i < ideas.length; i++){
+    //   if(ideas[i].starred === false) {
+    //     show(activeStar)
+    //     hide(star)
+    //     ideas[i].starred = true;
+    //   }
+    //   ideas[i].starred = false;
+    //   show(star)
+    //   hide(activeStar)
+    // }
   }
 
+function show(element){
+  element.classList.add("hidden");
+}
 
+function hide(element){
+  element.classList.remove("hidden");
+}
 
 // ideasGrid.innerHTML += `<section class="idea-card" id=${ideas[i].id}>
 // <h1>${savedPosters[i].title}</h1>
