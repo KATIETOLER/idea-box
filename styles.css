@@ -99,8 +99,13 @@ section {
 }
 
 .top-image, .star-active{
+  display: ;
   height: 2.5vw;
   width: 2.5vw;
+}
+
+#star {
+  display: ;
 }
 
 label{
