@@ -6,4 +6,12 @@ class Idea {
     this.starred = false;
     this.comments = [];
   };
+
+  favorite(){
+    this.starred = true;
+  }
+
+  unFavorite(){
+    this.starred = false;
+  }
 }
