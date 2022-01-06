@@ -14,7 +14,9 @@ var saveIdeaBtn = document.getElementById('save-idea');
 var searchBtn = document.querySelector('.search-button');
 
 //---------------- GLobal Variables ------------
+
 var ideas = [];
+
 
 //---------------- Event Listeners -------------
 saveIdeaBtn.addEventListener('click', saveIdea);
@@ -42,39 +44,15 @@ function saveIdea(event) {
   displayIdeas();
 };
 
+
 function displayIdeas() {
   ideasGrid.innerHTML = '';
   for (var i = 0; i < ideas.length; i++) {
     if (ideas[i].starred === false){
-      ideasGrid.innerHTML +=
-      `<div class="idea-card" id="${ideas[i].id}" alt="Idea Card">
-        <div class="top-section" id="${ideas[i].id}">
-          <img src="./assets/star.svg" class="top-image" id="star${ideas[i].id}" alt="Star"/>
-          <img src="./assets/delete.svg" class="top-image delete-x" id="delete${ideas[i].id}" alt="Delete X"/>
-        </div>
-        <div class="middle-section">
-          <h3 class="idea-title">${ideas[i].title}</h3>
-          <p class="idea-body">${ideas[i].body}</p>
-        </div>
-        <div class="bottom-section"> Comment
-          <img src="./assets/comment.svg" class="top-image" alt="Add"/>
-        </div>
-      </div>`;
+      ideasGrid.innerHTML += insertWhiteStarCard(ideas[i].id, ideas[i].title, ideas[i].body);
       };
       if (ideas[i].starred === true){
-        ideasGrid.innerHTML +=
-        `<div class="idea-card" id="${ideas[i].id}" alt="Idea Card">
-          <div class="top-section" id="${ideas[i].id}">
-            <img src="./assets/star-active.svg" class="top-image star-active" id="star${ideas[i].id}" alt="Star"/>
-            <img src="./assets/delete.svg" class="top-image delete-x" id="delete${ideas[i].id}" alt="Delete X"/>
-          </div>
-          <div class="middle-section">
-            <h3 class="idea-title">${ideas[i].title}</h3>
-            <p class="idea-body">${ideas[i].body}</p>
-          </div>
-          <div class="bottom-section"> Comment
-            <img src="./assets/comment.svg" class="top-image" alt="Add"/>
-          </div>`;
+        ideasGrid.innerHTML += insertRedStarCard(ideas[i].id, ideas[i].title, ideas[i].body);
       };
     };
   };
@@ -82,11 +60,10 @@ function displayIdeas() {
 function toggleFavorite(id, starred) {
   if (starred == 'false') {
     makeFavorite(id);
-    console.log(starred);
   };
   if (starred == 'true') {
     makeUnFavorite(id);
-    console.log(starred);
+
   };
 };
 
@@ -94,7 +71,6 @@ function makeUnFavorite(id) {
   for (var i = 0; i < ideas.length; i++) {
     if (id == ideas[i].id) {
       ideas[i].unFavorite();
-      console.log(ideas[i]);
       displayIdeas();
     };
   };
@@ -104,12 +80,11 @@ function makeFavorite(id){
   for (var i = 0; i < ideas.length; i++) {
     if (id == ideas[i].id) {
       ideas[i].favorite();
-      console.log(ideas[i]);
       displayIdeas();
     };
   };
 };
-  
+
 function hide(element){
   element.classList.add("hidden");
 };
@@ -117,3 +92,36 @@ function hide(element){
 function show(element){
   element.classList.remove("hidden");
 };
+
+function insertWhiteStarCard(id, title, body) {
+  var whiteStarCard =`<div class="idea-card" id="${id}" alt="Idea Card">
+  <div class="top-section" id="${id}">
+  <img src="./assets/star.svg" class="top-image" id="star${id}" alt="Star"/>
+  <img src="./assets/delete.svg" class="top-image delete-x" id="delete${id}" alt="Delete X"/>
+  </div>
+  <div class="middle-section">
+  <h3 class="idea-title">${title}</h3>
+  <p class="idea-body">${body}</p>
+  </div>
+  <div class="bottom-section"> Comment
+  <img src="./assets/comment.svg" class="top-image" alt="Add"/>
+  </div>
+  </div>`
+  return whiteStarCard;
+}
+
+function insertRedStarCard(id, title, body){
+  var redStarCard = `<div class="idea-card" id="${id}" alt="Idea Card">
+  <div class="top-section" id="${id}">
+  <img src="./assets/star-active.svg" class="top-image star-active" id="star${id}" alt="Star"/>
+  <img src="./assets/delete.svg" class="top-image delete-x" id="delete${id}" alt="Delete X"/>
+  </div>
+  <div class="middle-section">
+  <h3 class="idea-title">${title}</h3>
+  <p class="idea-body">${body}</p>
+  </div>
+  <div class="bottom-section"> Comment
+  <img src="./assets/comment.svg" class="top-image" alt="Add"/>
+  </div>`
+  return redStarCard;
+}
