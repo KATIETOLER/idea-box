@@ -22,7 +22,7 @@ var ideas = [];
 //---------------- Event Listeners -------------
 saveIdeaBtn.addEventListener('click', saveIdea);
 starredIdeasBtn.addEventListener('click', showStarred)
-showAllBtn.addEventListener('click', displayIdeas)
+showAllBtn.addEventListener('click', showAll)
 userInputArea.addEventListener('input', function(event) {
   // if(event.target.id === "body-input" && event.target.id === "title-input"){
   if(titleInput.value && bodyInput.value){
@@ -48,6 +48,11 @@ ideasGrid.addEventListener('click', function(event) {
 
 //---------------- Functions -------------------
 
+function showAll(){
+  hide(showAllBtn);
+  show(starredIdeasBtn)
+  displayIdeas();
+}
 function showSaveIdeaBtn() {
   hide(inactiveSaveIdeaBtn)
   show(saveIdeaBtn)
@@ -65,6 +70,8 @@ function showStarred(){
       ideasGrid.innerHTML += insertRedStarCard(ideas[i].id, ideas[i].title, ideas[i].body);
     };
   };
+  hide(starredIdeasBtn);
+  show(showAllBtn);
 };
 
 function saveIdea(event) {
