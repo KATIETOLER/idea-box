@@ -28,6 +28,8 @@ userInputArea.addEventListener('input', function(event) {
   if(titleInput.value && bodyInput.value){
       console.log('save')
       showSaveIdeaBtn()
+    } else {
+      hideSaveIdeaBtn()
     }
 })
 

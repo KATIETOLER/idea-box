@@ -194,7 +194,7 @@ button {
 }
 
 .inactive-button{
-  cursor: auto;
+  cursor: not-allowed;
   background-color: #656589;
 }
 
