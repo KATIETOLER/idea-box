@@ -7,7 +7,8 @@ var ideasGrid = document.querySelector('.saved-cards-grid');
 var topSection = document.querySelector('.top-section');
 var star = document.getElementById('top-image');
 var activeStar = document.getElementById('red-star');
-var userInputArea = document.querySelector('.user-input-area')
+var userInputArea = document.querySelector('.user-input-area');
+var searchInput = document.getElementById('search-ideas');
 //--------------- Buttons ----------------
 var showAllBtn = document.getElementById('show-all-btn')
 var starredIdeasBtn = document.getElementById('starred-ideas');
@@ -18,19 +19,92 @@ var searchBtn = document.querySelector('.search-button');
 
 var ideas = [];
 
+var searchResults = [];
+
+
+//-----------------------------Work Station ---------------------------
+
+// searchInput.addEventListener('input', console.log('click'))
+  // console.log(click);
+
+
+
+function startSearch(event) {
+  console.log('click')
+  searchResults = [];
+  pushSearch();
+  displaySearchResults();
+  console.log(searchResults);
+  console.log(ideas);
+}
+
+function pushSearch(){
+  var value = searchInput.value;
+  for (var i = 0; i < ideas.length; i++){
+    if (value == ideas[i].title || ideas[i].body){
+      searchResults.push(ideas[i])
+      }
+    }
+  }
+
+// if (value && value.trim().length > 0) {
+//   value = value.trim().toLowerCase()
+//   for (var i = 0; i < ideas.length; i++) {
+//     if (ideas[i].includes(searchInput.value)) {
+//       searchResults.push(ideas[i])
+//
+function searchTitle(){
+  for (var i = 0; i < ideas.length; i++){
+    if ( searchInput.value == ideas[i].title ){
+
+    }
+  }
+}
+
+function searchBody(){
+  for (var i = 0; i < ideas.length; i++){
+  }
+}
+
+function displaySearchResults() {
+  ideasGrid.innerHTML = '';
+  for (var i = 0; i < searchResults.length; i++) {
+    if (searchResults[i].starred === false){
+      ideasGrid.innerHTML += insertWhiteStarCard(searchResults[i].id, searchResults[i].title, searchResults[i].body);
+      };
+      if (searchResults[i].starred === true){
+        ideasGrid.innerHTML += insertRedStarCard(searchResults[i].id, searchResults[i].title, searchResults[i].body);
+    };
+  };
+  // searchResults = [];
+};
+
+
+
 
 //---------------- Event Listeners -------------
 saveIdeaBtn.addEventListener('click', saveIdea);
 starredIdeasBtn.addEventListener('click', showStarred)
 showAllBtn.addEventListener('click', showAll)
+
+
+  //
+  // var value = event.target.value;
+  // if (value && value.trim().length > 0){
+  //   value = value.trim().toLowerCase()
+  //   setList(ideas.filter(ideas))
+  // }
+
 userInputArea.addEventListener('input', function(event) {
-  // if(event.target.id === "body-input" && event.target.id === "title-input"){
   if(titleInput.value && bodyInput.value){
-      console.log('save')
       showSaveIdeaBtn()
     } else {
       hideSaveIdeaBtn()
     }
+
+  if (searchInput.value){
+    startSearch()
+  }
 })
 
 ideasGrid.addEventListener('click', function(event) {
@@ -47,6 +121,7 @@ ideasGrid.addEventListener('click', function(event) {
 });
 
 //---------------- Functions -------------------
+
 
 function showAll(){
   hide(showAllBtn);
@@ -85,6 +160,7 @@ function saveIdea(event) {
     displayIdeas();
   }
 };
+
 
 function displayIdeas() {
   ideasGrid.innerHTML = '';
