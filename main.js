@@ -20,6 +20,16 @@ var ideas = [];
 
 //---------------- Event Listeners -------------
 saveIdeaBtn.addEventListener('click', saveIdea);
+starredIdeasBtn.addEventListener('click', showStarred)
+
+function showStarred(){
+  ideasGrid.innerHTML = ''
+  for(var i = 0; i < ideas.length; i++){
+    if (ideas[i].starred === true){
+      ideasGrid.innerHTML += insertRedStarCard(ideas[i].id, ideas[i].title, ideas[i].body);
+      };
+    }
+  };
 
 ideasGrid.addEventListener('click', function(event) {
   for (var i = 0; i < ideas.length; i++){
@@ -43,7 +53,6 @@ function saveIdea(event) {
   bodyInput.value = '';
   displayIdeas();
 };
-
 
 function displayIdeas() {
   ideasGrid.innerHTML = '';
