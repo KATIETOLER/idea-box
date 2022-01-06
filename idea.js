@@ -7,11 +7,11 @@ class Idea {
     this.comments = [];
   };
 
-  favorite(){
-    this.starred = true;
-  }
-
-  unFavorite(){
-    this.starred = false;
-  }
-}
+  updateIdea() {
+    if (this.starred === true){
+      this.starred = false;
+    } else if (this.starred === false){
+      this.starred = true;
+    };
+  };
+};

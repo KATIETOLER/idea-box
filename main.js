@@ -25,8 +25,9 @@ showAllBtn.addEventListener('click', displayIdeas)
 
 ideasGrid.addEventListener('click', function(event) {
   for (var i = 0; i < ideas.length; i++){
-    if (event.target.id === `star${ideas[i].id}`) {
-      toggleFavorite(`${ideas[i].id}`, `${ideas[i].starred}`);
+    if (event.target.id == `star${ideas[i].id}`) {
+      ideas[i].updateIdea();
+      displayIdeas();
     };
     if (event.target.id === `delete${ideas[i].id}`) {
       ideas.splice(i, 1);
@@ -34,7 +35,6 @@ ideasGrid.addEventListener('click', function(event) {
     };
   };
 });
-
 
 //---------------- Functions -------------------
 function showStarred(){
@@ -66,34 +66,6 @@ function displayIdeas() {
       };
     };
   };
-
-function toggleFavorite(id, starred) {
-  if (starred == 'false') {
-    makeFavorite(id);
-  };
-  if (starred == 'true') {
-    makeUnFavorite(id);
-
-  };
-};
-
-function makeUnFavorite(id) {
-  for (var i = 0; i < ideas.length; i++) {
-    if (id == ideas[i].id) {
-      ideas[i].unFavorite();
-      displayIdeas();
-    };
-  };
-};
-
-function makeFavorite(id){
-  for (var i = 0; i < ideas.length; i++) {
-    if (id == ideas[i].id) {
-      ideas[i].favorite();
-      displayIdeas();
-    };
-  };
-};
 
 function hide(element){
   element.classList.add("hidden");
