@@ -7,12 +7,13 @@ var ideasGrid = document.querySelector('.saved-cards-grid');
 var topSection = document.querySelector('.top-section');
 var star = document.getElementById('top-image');
 var activeStar = document.getElementById('red-star');
+var userInputArea = document.querySelector('.user-input-area')
 //--------------- Buttons ----------------
 var showAllBtn = document.getElementById('show-all-btn')
 var starredIdeasBtn = document.getElementById('starred-ideas');
 var saveIdeaBtn = document.getElementById('save-idea');
+var inactiveSaveIdeaBtn = document.querySelector('.inactive-button')
 var searchBtn = document.querySelector('.search-button');
-
 //---------------- GLobal Variables ------------
 
 var ideas = [];
@@ -22,6 +23,13 @@ var ideas = [];
 saveIdeaBtn.addEventListener('click', saveIdea);
 starredIdeasBtn.addEventListener('click', showStarred)
 showAllBtn.addEventListener('click', displayIdeas)
+userInputArea.addEventListener('input', function(event) {
+  // if(event.target.id === "body-input" && event.target.id === "title-input"){
+  if(titleInput.value && bodyInput.value){
+      console.log('save')
+      showSaveIdeaBtn()
+    }
+})
 
 ideasGrid.addEventListener('click', function(event) {
   for (var i = 0; i < ideas.length; i++){
@@ -37,6 +45,12 @@ ideasGrid.addEventListener('click', function(event) {
 });
 
 //---------------- Functions -------------------
+
+function showSaveIdeaBtn() {
+  hide(inactiveSaveIdeaBtn)
+  show(saveIdeaBtn)
+}
+
 function showStarred(){
   ideasGrid.innerHTML = ''
   for(var i = 0; i < ideas.length; i++){
@@ -47,12 +61,14 @@ function showStarred(){
 };
 
 function saveIdea(event) {
-  event.preventDefault();
-  var newIdea = new Idea(titleInput.value, bodyInput.value);
-  ideas.push(newIdea);
-  titleInput.value = '';
-  bodyInput.value = '';
-  displayIdeas();
+  if(titleInput.value && bodyInput.value){
+    event.preventDefault();
+    var newIdea = new Idea(titleInput.value, bodyInput.value);
+    ideas.push(newIdea);
+    titleInput.value = '';
+    bodyInput.value = '';
+    displayIdeas();
+  }
 };
 
 function displayIdeas() {

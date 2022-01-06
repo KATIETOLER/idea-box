@@ -193,6 +193,10 @@ button {
   padding: 20px;
 }
 
+.inactive-button{
+  cursor: auto;
+  background-color: #656589;
+}
 
 .hidden {
   display: none;
