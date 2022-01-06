@@ -7,8 +7,8 @@ var ideasGrid = document.querySelector('.saved-cards-grid');
 var topSection = document.querySelector('.top-section');
 var star = document.getElementById('top-image');
 var activeStar = document.getElementById('red-star');
-
 //--------------- Buttons ----------------
+var showAllBtn = document.getElementById('show-all-btn')
 var starredIdeasBtn = document.getElementById('starred-ideas');
 var saveIdeaBtn = document.getElementById('save-idea');
 var searchBtn = document.querySelector('.search-button');
@@ -20,6 +20,8 @@ var ideas = [];
 
 //---------------- Event Listeners -------------
 saveIdeaBtn.addEventListener('click', saveIdea);
+starredIdeasBtn.addEventListener('click', showStarred)
+showAllBtn.addEventListener('click', displayIdeas)
 
 ideasGrid.addEventListener('click', function(event) {
   for (var i = 0; i < ideas.length; i++){
@@ -35,6 +37,15 @@ ideasGrid.addEventListener('click', function(event) {
 
 
 //---------------- Functions -------------------
+function showStarred(){
+  ideasGrid.innerHTML = ''
+  for(var i = 0; i < ideas.length; i++){
+    if (ideas[i].starred === true){
+      ideasGrid.innerHTML += insertRedStarCard(ideas[i].id, ideas[i].title, ideas[i].body);
+    };
+  };
+};
+
 function saveIdea(event) {
   event.preventDefault();
   var newIdea = new Idea(titleInput.value, bodyInput.value);
@@ -43,7 +54,6 @@ function saveIdea(event) {
   bodyInput.value = '';
   displayIdeas();
 };
-
 
 function displayIdeas() {
   ideasGrid.innerHTML = '';
