@@ -51,6 +51,11 @@ function showSaveIdeaBtn() {
   show(saveIdeaBtn)
 }
 
+function hideSaveIdeaBtn() {
+  hide(saveIdeaBtn)
+  show(inactiveSaveIdeaBtn)
+}
+
 function showStarred(){
   ideasGrid.innerHTML = ''
   for(var i = 0; i < ideas.length; i++){
@@ -67,6 +72,7 @@ function saveIdea(event) {
     ideas.push(newIdea);
     titleInput.value = '';
     bodyInput.value = '';
+    hideSaveIdeaBtn()
     displayIdeas();
   }
 };
