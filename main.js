@@ -17,72 +17,44 @@ var saveIdeaBtn = document.getElementById('save-idea');
 var inactiveSaveIdeaBtn = document.querySelector('.inactive-button')
 var searchBtn = document.querySelector('.search-button');
 //---------------- GLobal Variables ------------
-
 var ideas = [];
-
 var searchResults = [];
-
-
 //-----------------------------Work Station ---------------------------
 
-function startSearch(event) {
-  pushSearch();
+function search(event) {
   displaySearchResults();
-}
-
-function pushSearch(){
-  displayIdeas()
-  var value = searchInput.value.toLowerCase();
-    for (var i = 0; i < ideas.length; i++){
-      if (ideasGrid.innerHTML.toLowerCase().includes(value)){
-        console.log("HELLO")
-      }
-    }
-  }
-
-function searchTitle(){
-  for (var i = 0; i < ideas.length; i++){
-    if ( searchInput.value == ideas[i].title ){
-
-    }
-  }
-}
-
-function searchBody(){
-  for (var i = 0; i < ideas.length; i++){
-  }
 }
 
 function displaySearchResults() {
   ideasGrid.innerHTML = '';
-  for (var i = 0; i < searchResults.length; i++) {
-    if (searchResults[i].starred === false){
-      ideasGrid.innerHTML += insertWhiteStarCard(searchResults[i].id, searchResults[i].title, searchResults[i].body);
+  var value = searchInput.value.toLowerCase();
+  for (var i = 0; i < ideas.length; i++) {
+    if (ideas[i].title.includes(`${value}`) || ideas[i].body.includes(`${value}`)){
+      if (ideas[i].starred === false){
+        ideasGrid.innerHTML += insertWhiteStarCard(ideas[i].id, ideas[i].title, ideas[i].body);
       };
-      if (searchResults[i].starred === true){
-        ideasGrid.innerHTML += insertRedStarCard(searchResults[i].id, searchResults[i].title, searchResults[i].body);
+      if (ideas[i].starred === true){
+        ideasGrid.innerHTML += insertRedStarCard(ideas[i].id, ideas[i].title, ideas[i].body);
+      };
     };
   };
-};
-
-
-
+}
 
 //---------------- Event Listeners -------------
 saveIdeaBtn.addEventListener('click', saveIdea);
-starredIdeasBtn.addEventListener('click', showStarred)
-showAllBtn.addEventListener('click', showAll)
+starredIdeasBtn.addEventListener('click', showStarred);
+showAllBtn.addEventListener('click', showAll);
 userInputArea.addEventListener('input', function(event) {
-  if(titleInput.value && bodyInput.value){
-      showSaveIdeaBtn()
-    } else {
-      hideSaveIdeaBtn()
-    }
+  if(titleInput.value && bodyInput.value) {
+    showSaveIdeaBtn();
+  } else {
+    hideSaveIdeaBtn();
+  };
 
-  if (searchInput.value){
-    startSearch()
-  }
-})
+  if (searchInput.value) {
+    search();
+  };
+});
 
 ideasGrid.addEventListener('click', function(event) {
   for (var i = 0; i < ideas.length; i++){
@@ -98,27 +70,26 @@ ideasGrid.addEventListener('click', function(event) {
 });
 
 //---------------- Functions -------------------
-
-
-function showAll(){
+function showAll() {
   hide(showAllBtn);
-  show(starredIdeasBtn)
+  show(starredIdeasBtn);
   displayIdeas();
-}
+};
+
 function showSaveIdeaBtn() {
-  hide(inactiveSaveIdeaBtn)
-  show(saveIdeaBtn)
-}
+  hide(inactiveSaveIdeaBtn);
+  show(saveIdeaBtn);
+};
 
 function hideSaveIdeaBtn() {
-  hide(saveIdeaBtn)
-  show(inactiveSaveIdeaBtn)
-}
+  hide(saveIdeaBtn);
+  show(inactiveSaveIdeaBtn);
+};
 
-function showStarred(){
-  ideasGrid.innerHTML = ''
-  for(var i = 0; i < ideas.length; i++){
-    if (ideas[i].starred === true){
+function showStarred() {
+  ideasGrid.innerHTML = '';
+  for(var i = 0; i < ideas.length; i++) {
+    if (ideas[i].starred === true) {
       ideasGrid.innerHTML += insertRedStarCard(ideas[i].id, ideas[i].title, ideas[i].body);
     };
   };
@@ -127,21 +98,21 @@ function showStarred(){
 };
 
 function saveIdea(event) {
-  if(titleInput.value && bodyInput.value){
+  if(titleInput.value && bodyInput.value) {
     event.preventDefault();
     var newIdea = new Idea(titleInput.value, bodyInput.value);
     ideas.push(newIdea);
     titleInput.value = '';
     bodyInput.value = '';
-    hideSaveIdeaBtn()
+    hideSaveIdeaBtn();
     displayIdeas();
-  }
+  };
 };
 
 function displayIdeas() {
   ideasGrid.innerHTML = '';
   for (var i = 0; i < ideas.length; i++) {
-    if (ideas[i].starred === false){
+    if (ideas[i].starred === false) {
       ideasGrid.innerHTML += insertWhiteStarCard(ideas[i].id, ideas[i].title, ideas[i].body);
       };
       if (ideas[i].starred === true){
@@ -150,11 +121,11 @@ function displayIdeas() {
     };
   };
 
-function hide(element){
+function hide(element) {
   element.classList.add("hidden");
 };
 
-function show(element){
+function show(element) {
   element.classList.remove("hidden");
 };
 
@@ -171,9 +142,9 @@ function insertWhiteStarCard(id, title, body) {
   <div class="bottom-section"> Comment
   <img src="./assets/comment.svg" class="top-image" alt="Add"/>
   </div>
-  </div>`
+  </div>`;
   return whiteStarCard;
-}
+};
 
 function insertRedStarCard(id, title, body){
   var redStarCard = `<div class="idea-card" id="${id}" alt="Idea Card">
@@ -187,6 +158,6 @@ function insertRedStarCard(id, title, body){
   </div>
   <div class="bottom-section"> Comment
   <img src="./assets/comment.svg" class="top-image" alt="Add"/>
-  </div>`
+  </div>`;
   return redStarCard;
-}
+};
