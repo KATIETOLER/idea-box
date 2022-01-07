@@ -21,7 +21,7 @@ var ideas = [];
 var searchResults = [];
 //-----------------------------Work Station ---------------------------
 
-function search(event) {
+function search() {
   displaySearchResults();
 }
 
@@ -35,8 +35,8 @@ function displaySearchResults() {
       };
       if (ideas[i].starred === true){
         ideasGrid.innerHTML += insertRedStarCard(ideas[i].id, ideas[i].title, ideas[i].body);
-      };
-    };
+      }
+    }
   };
 }
 
@@ -44,7 +44,7 @@ function displaySearchResults() {
 saveIdeaBtn.addEventListener('click', saveIdea);
 starredIdeasBtn.addEventListener('click', showStarred);
 showAllBtn.addEventListener('click', showAll);
-userInputArea.addEventListener('input', function(event) {
+userInputArea.addEventListener('keydown', function(event) {
   if(titleInput.value && bodyInput.value) {
     showSaveIdeaBtn();
   } else {
