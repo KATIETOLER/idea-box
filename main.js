@@ -22,14 +22,11 @@ var searchBtn = document.querySelector('.search-button');
 var ideas = [];
 //-----------------------------Work Station ---------------------------
 
-
-
-
 //---------------- Event Listeners -------------
 saveIdeaBtn.addEventListener('click', saveIdea);
 starredIdeasBtn.addEventListener('click', showStarred);
 showAllBtn.addEventListener('click', showAll);
-userInputArea.addEventListener('input', function(event) {
+userInputArea.addEventListener('keydown', function(event) {
   if(titleInput.value && bodyInput.value) {
     showSaveIdeaBtn();
   } else {
