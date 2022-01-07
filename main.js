@@ -9,6 +9,7 @@ var star = document.getElementById('top-image');
 var activeStar = document.getElementById('red-star');
 var userInputArea = document.querySelector('.user-input-area');
 var searchInput = document.getElementById('search-ideas');
+var ideaCard = document.querySelector('.idea-card');
 //--------------- Buttons ----------------
 var showAllBtn = document.getElementById('show-all-btn')
 var starredIdeasBtn = document.getElementById('starred-ideas');
@@ -24,35 +25,21 @@ var searchResults = [];
 
 //-----------------------------Work Station ---------------------------
 
-// searchInput.addEventListener('input', console.log('click'))
-  // console.log(click);
-
-
-
 function startSearch(event) {
-  console.log('click')
-  searchResults = [];
   pushSearch();
   displaySearchResults();
-  console.log(searchResults);
-  console.log(ideas);
 }
 
 function pushSearch(){
-  var value = searchInput.value;
-  for (var i = 0; i < ideas.length; i++){
-    if (value == ideas[i].title || ideas[i].body){
-      searchResults.push(ideas[i])
+  displayIdeas()
+  var value = searchInput.value.toLowerCase();
+    for (var i = 0; i < ideas.length; i++){
+      if (ideasGrid.innerHTML.toLowerCase().includes(value)){
+        console.log("HELLO")
       }
     }
   }
 
-// if (value && value.trim().length > 0) {
-//   value = value.trim().toLowerCase()
-//   for (var i = 0; i < ideas.length; i++) {
-//     if (ideas[i].includes(searchInput.value)) {
-//       searchResults.push(ideas[i])
-//
 function searchTitle(){
   for (var i = 0; i < ideas.length; i++){
     if ( searchInput.value == ideas[i].title ){
@@ -76,7 +63,6 @@ function displaySearchResults() {
         ideasGrid.innerHTML += insertRedStarCard(searchResults[i].id, searchResults[i].title, searchResults[i].body);
     };
   };
-  // searchResults = [];
 };
 
 
@@ -86,15 +72,6 @@ function displaySearchResults() {
 saveIdeaBtn.addEventListener('click', saveIdea);
 starredIdeasBtn.addEventListener('click', showStarred)
 showAllBtn.addEventListener('click', showAll)
-
-
-  //
-  // var value = event.target.value;
-  // if (value && value.trim().length > 0){
-  //   value = value.trim().toLowerCase()
-  //   setList(ideas.filter(ideas))
-  // }
-
 userInputArea.addEventListener('input', function(event) {
   if(titleInput.value && bodyInput.value){
       showSaveIdeaBtn()
@@ -160,7 +137,6 @@ function saveIdea(event) {
     displayIdeas();
   }
 };
-
 
 function displayIdeas() {
   ideasGrid.innerHTML = '';
