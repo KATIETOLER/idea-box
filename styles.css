@@ -1,11 +1,14 @@
-
-html {
+*{
   font-family: "Open Sans", bold;
+}
+html {
   height: 100%;
+  margin: -10px;
   background-color: #A9AAD2;
 }
 
 body {
+  /* margin: 0; */
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -14,14 +17,15 @@ body {
 
 h4 {
   font-weight: bold;
+  padding-left: .5vw;
 }
 
 nav {
-  position: flex;
   top: 0;
   left: 0;
   height: 100%;
   width: 25vw;
+  padding-bottom: 4.5vw;
   background-color: #1F1F3D;
   border-style: solid;
   border-color: #1F1F3D;
@@ -46,9 +50,10 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 1em;
+  padding-top: .5em;
   width: 79vw;
   height: auto;
-  margin-bottom: 2vw;
   font-weight: 600;
 }
 
@@ -94,8 +99,8 @@ section {
   background-color: #5356A4;
 }
 
-.middle-section{
-
+#card-area{
+  margin-bottom: -2.5vw;
 }
 
 .top-image, .star-active{
@@ -130,7 +135,6 @@ button {
 }
 
 #body-input {
-  font-family: 'Open Sans';
   border-width: .25vw;
   width: 35vw;
   height: 10vw;
@@ -144,6 +148,7 @@ button {
 .search-button {
   border: none;
   width: 5vw;
+  height: 4.9vw;
 }
 
 .search-bar {
@@ -166,8 +171,8 @@ button {
   display: flex;
   justify-content:space-between;
 }
+
 .nav-button {
-  font-family: "Open Sans", bold;
   font-size: medium;
   font-weight: bolder;
   color: #E9E9F3;
@@ -186,6 +191,10 @@ button {
   border-color: #353567;
 }
 
+.filter-text-style{
+  padding-left: .5vw;
+}
+
 .saved-cards-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -194,7 +203,7 @@ button {
 }
 
 .inactive-button{
-  cursor: not-allowed;
+  cursor: auto;
   background-color: #656589;
 }
 

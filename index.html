@@ -9,9 +9,11 @@
     <nav>
       <h4>IdeaBox</h4>
       <div class="filter-box">
-        <p class="filter-text">Filter Starred Ideas</p>
-        <button class="nav-button" id="starred-ideas">Show Starred Ideas</button>
-        <button class="nav-button hidden" id="show-all-btn">Show All Ideas</button>
+        <div class="filter-text-style">
+          <p class="filter-text">Filter Starred Ideas</p>
+          <button class="nav-button" id="starred-ideas">Show Starred Ideas</button>
+          <button class="nav-button hidden" id="show-all-btn">Show All Ideas</button>
+        </div>
     </div>
     </nav>
     <main>
@@ -24,10 +26,12 @@
         <p>
           <textarea type="text" class="inputs" id="body-input" maxlength="120"></textarea>
         </p>
-        <button class="hidden" id="save-idea">Save</button>
-        <button class="inactive-button">Save</button>
+        <p>
+          <button class="hidden" id="save-idea">Save</button>
+          <button class="inactive-button">Save</button>
+        </p>
         <div class="search-bar">
-          <button class="search-button">
+          <button type="submit" class="search-button">
             <img src="./assets/search.svg" class="search-icon" alt="Search Icon"/>
           </button>
           <input type="text" class="inputs" placeholder="Search ideas" id="search-ideas">
