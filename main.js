@@ -26,7 +26,7 @@ var ideas = [];
 saveIdeaBtn.addEventListener('click', saveIdea);
 starredIdeasBtn.addEventListener('click', showStarred);
 showAllBtn.addEventListener('click', showAll);
-userInputArea.addEventListener('keydown', function(event) {
+userInputArea.addEventListener('input', function(event) {
   if(titleInput.value && bodyInput.value) {
     showSaveIdeaBtn();
   } else {
