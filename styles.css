@@ -29,7 +29,6 @@ nav {
   display: flex;
   flex-direction: column;
   padding: 1vw;
-
   font-family: "Open Sans", light;
   /* color: #A9AAD2; */
   /* padding: 8vw; */
@@ -151,6 +150,7 @@ button {
   justify-content: center;
   height: 5vw;
   width: 35.5vw;
+  padding: 1vw;
 }
 
 #search-ideas{
