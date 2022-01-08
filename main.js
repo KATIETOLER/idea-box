@@ -1,3 +1,5 @@
+/// Hello is this working? Github is fail!
+
 //---------------- Query Selectors -------------
 var titleInput = document.getElementById('title-input');
 var bodyInput = document.getElementById('body-input');
@@ -20,6 +22,8 @@ var searchBtn = document.querySelector('.search-button');
 
 //---------------- GLobal Variables ------------
 var ideas = [];
+
+/// inactiveSaveIdeaBtn.disabled = true;
 //-----------------------------Work Station ---------------------------
 
 //---------------- Event Listeners -------------
