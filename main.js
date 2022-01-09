@@ -12,6 +12,7 @@ var activeStar = document.getElementById('red-star');
 var userInputArea = document.querySelector('.user-input-area');
 var searchInput = document.getElementById('search-ideas');
 var ideaCard = document.querySelector('.idea-card');
+var searchBar = document.querySelector('.search-bar')
 
 //--------------- Buttons ----------------
 var showAllBtn = document.getElementById('show-all-btn')
@@ -23,7 +24,7 @@ var searchBtn = document.querySelector('.search-button');
 //---------------- GLobal Variables ------------
 var ideas = [];
 
-/// inactiveSaveIdeaBtn.disabled = true;
+
 //-----------------------------Work Station ---------------------------
 
 //---------------- Event Listeners -------------
