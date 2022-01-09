@@ -44,7 +44,7 @@ nav {
 
  nav,
  .middle-section,
- .search-bar {
+ .search-bar, {
   padding: 1vw;
  }
 
@@ -77,6 +77,11 @@ section {
   flex-grow: 1;
 }
 
+.middle-section {
+  padding-left: 1vw;
+  width: 19vw;
+}
+
 .idea-card {
   justify-content: space-between;
   align-items: center;
@@ -106,13 +111,14 @@ section {
 }
 
 .bottom-section {
+  align-items: center;
   justify-content: space-between;
   text-align:right;
   background-color: #5356A4;
 }
 
 #card-area {
-  margin-bottom: -2.5vw;
+  margin-bottom: -5vw;
 }
 
 .top-image,
