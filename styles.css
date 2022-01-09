@@ -5,7 +5,8 @@
 html {
   width: 100%;
   margin: -10px;
-  background-color: #A9AAD2;
+  /* background-color: #A9AAD2; */
+  background-color: #1F1F3D;
 }
 
 html,
@@ -41,7 +42,7 @@ nav {
 .nav-style {
   display: flex;
   flex-direction: column;
-  background-color: ;
+  background-color: #1F1F3D;
 }
 
  nav,
@@ -74,6 +75,7 @@ form {
   width: 79vw;
   height: auto;
   font-weight: 600;
+  background-color: #A9AAD2
 }
 
 section {
