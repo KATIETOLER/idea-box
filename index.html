@@ -6,6 +6,7 @@
     <title>Idea Box</title>
   </head>
   <body>
+  <div class="nav-style">
     <nav>
       <h4>IdeaBox</h4>
       <div class="filter-box">
@@ -14,21 +15,22 @@
           <button class="nav-button" id="starred-ideas">Show Starred Ideas</button>
           <button class="nav-button hidden" id="show-all-btn">Show All Ideas</button>
         </div>
-    </div>
+      </div>
     </nav>
+  </div>
     <main>
       <form class="user-input-area">
           <label for="title">Title</label>
         <p>
-          <input type="text" class="inputs" id="title-input">
+          <input type="text" class="inputs" id="title-input" maxlength="20">
         </p>
           <label for="body">Body</label>
         <p>
-          <textarea type="text" class="inputs" id="body-input" maxlength="120"></textarea>
+          <textarea type="text" class="inputs" id="body-input" maxlength="110"></textarea>
         </p>
         <p>
           <button class="hidden" id="save-idea">Save</button>
-          <button class="inactive-button">Save</button>
+          <button class="inactive-button" disabled>Save</button>
         </p>
         <div class="search-bar">
           <button type="submit" class="search-button">

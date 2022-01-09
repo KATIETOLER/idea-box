@@ -28,12 +28,17 @@ h4 {
 }
 
 nav {
+  padding: .5vw;
   border: solid #1F1F3D;
   color: #E9E9F3;
   top: 0;
   left: 0;
   width: 25vw;
-  padding-bottom: 4.5vw;
+}
+
+.nav-style {
+  display: flex;
+  flex-direction: column;
 }
 
  nav,
@@ -42,7 +47,6 @@ nav {
   background-color: #1F1F3D;
  }
 
- nav,
  .middle-section,
  .search-bar, {
   padding: 1vw;
