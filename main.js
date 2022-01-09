@@ -161,7 +161,7 @@ function insertRedStarCard(id, title, body){
   </div>
   <div class="bottom-section">
   <img src="./assets/comment.svg" class="top-image" alt="Add"/>
-  <p> Comment </p>
+  <p class="comment-title">Comment</p>
   </div>`;
   return redStarCard;
 };
