@@ -156,6 +156,7 @@ button {
   border-style: solid;
   border-color: #5356A4;
   cursor: pointer;
+  background-color: #353567;
 }
 
 .inputs {
@@ -181,6 +182,7 @@ button {
   border: 0;
   width: 5vw;
   height: 4.9vw;
+  background-color: #353567;
 }
 
 .search-bar {
@@ -193,7 +195,8 @@ button {
 }
 
 #search-ideas{
-  height: 4.5vw;
+  height: 4.2vw;
+  border-left: none;
 }
 
 .filter-text {
