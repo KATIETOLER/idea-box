@@ -141,8 +141,9 @@ function insertWhiteStarCard(id, title, body) {
   <h3 class="idea-title">${title}</h3>
   <p class="idea-body">${body}</p>
   </div>
-  <div class="bottom-section"> Comment
+  <div class="bottom-section">
   <img src="./assets/comment.svg" class="top-image" alt="Add"/>
+  <p class="comment-title">Comment</p>
   </div>
   </div>`;
   return whiteStarCard;
@@ -158,8 +159,9 @@ function insertRedStarCard(id, title, body){
   <h3 class="idea-title">${title}</h3>
   <p class="idea-body">${body}</p>
   </div>
-  <div class="bottom-section"> Comment
+  <div class="bottom-section">
   <img src="./assets/comment.svg" class="top-image" alt="Add"/>
+  <p> Comment </p>
   </div>`;
   return redStarCard;
 };

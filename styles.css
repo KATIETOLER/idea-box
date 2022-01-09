@@ -33,12 +33,15 @@ nav {
   color: #E9E9F3;
   top: 0;
   left: 0;
-  width: 25vw;
+  width: 50vw;
+  height: 100vh;
+  background-color: #1F1F3D;
 }
 
 .nav-style {
   display: flex;
   flex-direction: column;
+  background-color: ;
 }
 
  nav,
@@ -106,7 +109,7 @@ section {
 .top-section {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
 }
 
 .top-section,
@@ -116,9 +119,11 @@ section {
 
 .bottom-section {
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   text-align:right;
   background-color: #5356A4;
+  color: #E9E9F3;
+  font-weight: bold;
 }
 
 #card-area {
@@ -142,15 +147,19 @@ button {
   color: #FFFFFF;
   width: 35.5vw;
   height: 5vw;
-  border-radius: .1vw;
+  border-radius: .2vw;
   border-style: solid;
+  border-color: #5356A4;
   cursor: pointer;
+
 }
 
 .inputs {
   border-style: solid;
   border-radius: .1vw;
   height: 3vw;
+  border-color: #5356A4;
+  border-radius: .2vw;
 }
 
 #body-input {
@@ -175,6 +184,8 @@ button {
   justify-content: center;
   height: 5vw;
   width: 35.5vw;
+  border-color: #5356A4;
+
 }
 
 #search-ideas{
