@@ -6,10 +6,10 @@ var userInputArea = document.querySelector('.user-input-area');
 var searchInput = document.getElementById('searchIdeas');
 
 //--------------- Buttons ----------------
-var showAllBtn = document.getElementById('showAllBtn')
-var starredIdeasBtn = document.getElementById('starredIdeas');
+var showAllBtn = document.getElementById('showAllBtn');
+var starredIdeasBtn = document.getElementById('starredIdeasBtn');
 var saveIdeaBtn = document.getElementById('saveIdea');
-var inactiveSaveIdeaBtn = document.querySelector('.inactive-button')
+var inactiveSaveIdeaBtn = document.querySelector('.inactive-button');
 
 //---------------- GLobal Variables ------------
 var ideas = [];
@@ -31,6 +31,7 @@ userInputArea.addEventListener('input', function(event) {
     displayIdeas();
   };
 });
+
 ideasGrid.addEventListener('click', function(event) {
   for (var i = 0; i < ideas.length; i++) {
     if (event.target.id == `star${ideas[i].id}`) {
@@ -62,12 +63,7 @@ function search() {
   var value = searchInput.value.toLowerCase();
   for (var i = 0; i < ideas.length; i++) {
     if (ideas[i].title.includes(`${value}`) || ideas[i].body.includes(`${value}`)){
-      if (ideas[i].starred === false) {
-        ideasGrid.innerHTML += insertWhiteStarCard(ideas[i].id, ideas[i].title, ideas[i].body);
-      };
-      if (ideas[i].starred === true) {
-        ideasGrid.innerHTML += insertRedStarCard(ideas[i].id, ideas[i].title, ideas[i].body);
-      };
+      ideasGrid.innerHTML += insertCard(ideas[i]);
     };
   };
 };
@@ -75,21 +71,15 @@ function search() {
 function displayIdeas() {
   ideasGrid.innerHTML = '';
   for (var i = 0; i < ideas.length; i++) {
-    if (ideas[i].starred === false) {
-      ideasGrid.innerHTML += insertWhiteStarCard(ideas[i].id, ideas[i].title, ideas[i].body);
-      };
-
-      if (ideas[i].starred === true){
-        ideasGrid.innerHTML += insertRedStarCard(ideas[i].id, ideas[i].title, ideas[i].body);
-      };
-    };
+      ideasGrid.innerHTML += insertCard(ideas[i]);
   };
+};
 
 function showStarred() {
   ideasGrid.innerHTML = '';
   for (var i = 0; i < ideas.length; i++) {
-    if (ideas[i].starred === true) {
-      ideasGrid.innerHTML += insertRedStarCard(ideas[i].id, ideas[i].title, ideas[i].body);
+    if (ideas[i].starred) {
+      ideasGrid.innerHTML += insertCard(ideas[i]);
     };
   };
 
@@ -127,16 +117,17 @@ function show(element) {
   element.classList.remove("hidden");
 };
 
-function insertWhiteStarCard(id, title, body) {
-  var whiteStarCard =
-  `<div class="idea-card" id="${id}" alt="Idea Card">
-    <div class="top-section" id="${id}">
-      <img src="./assets/star.svg" class="top-image" id="star${id}" alt="Star"/>
-      <img src="./assets/delete.svg" class="top-image delete-x" id="delete${id}" alt="Delete X"/>
+function insertCard(idea) {
+  var starSrc = !idea.starred ? "./assets/star.svg" : "./assets/star-active.svg"
+  var ideaCard =
+  `<div class="idea-card" id="${idea.id}" alt="Idea Card">
+    <div class="top-section" id="${idea.id}">
+      <img src="${starSrc}" class="top-image" id="star${idea.id}" alt="Star"/>
+      <img src="./assets/delete.svg" class="top-image delete-x" id="delete${idea.id}" alt="Delete X"/>
     </div>
     <div class="middle-section">
-      <h3 class="idea-title">${title}</h3>
-      <p class="idea-body">${body}</p>
+      <h3 class="idea-title">${idea.title}</h3>
+      <p class="idea-body">${idea.body}</p>
     </div>
     <div class="bottom-section">
       <img src="./assets/comment.svg" class="top-image" alt="Add"/>
@@ -144,25 +135,5 @@ function insertWhiteStarCard(id, title, body) {
     </div>
   </div>`;
 
-  return whiteStarCard;
-};
-
-function insertRedStarCard(id, title, body) {
-  var redStarCard =
-  `<div class="idea-card" id="${id}" alt="Idea Card">
-    <div class="top-section" id="${id}">
-      <img src="./assets/star-active.svg" class="top-image star-active" id="star${id}" alt="Star"/>
-      <img src="./assets/delete.svg" class="top-image delete-x" id="delete${id}" alt="Delete X"/>
-    </div>
-    <div class="middle-section">
-      <h3 class="idea-title">${title}</h3>
-      <p class="idea-body">${body}</p>
-    </div>
-    <div class="bottom-section">
-      <img src="./assets/comment.svg" class="top-image" alt="Add"/>
-      <p class="comment-title">Comment</p>
-    </div>
-  </div>`;
-
-  return redStarCard;
+  return ideaCard;
 };

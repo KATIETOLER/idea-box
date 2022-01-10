@@ -5,26 +5,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <title>Idea Box</title>
   </head>
+  <body>
     <nav class="nav-style">
       <h4>IdeaBox</h4>
       <div class="filter-box">
         <div class="filter-text-style">
           <p class="filter-text">Filter Starred Ideas</p>
-          <button class="nav-button" id="starreIdeas">Show Starred Ideas</button>
+          <button class="nav-button" id="starredIdeasBtn">Show Starred Ideas</button>
           <button class="nav-button hidden" id="showAllBtn">Show All Ideas</button>
         </div>
       </div>
     </nav>
-  <body>
     <main>
-      <form class="user-input-area">
-          <label for="title">Title</label>
+      <form class="user-input-area" onSubmit="return false;">
+        <label for="title">Title</label>
         <p>
-          <input type="text" class="inputs" id="titleInput" maxlength="20">
+          <input type="text" class="inputs" id="titleInput" maxlength="20" placeholder="20 character limit">
         </p>
-          <label for="body">Body</label>
+        <label for="body">Body</label>
         <p>
-          <textarea type="text" class="inputs" id="bodyInput" maxlength="110"></textarea>
+          <textarea type="text" class="inputs" id="bodyInput" maxlength="110" placeholder="110 character limit"></textarea>
         </p>
         <p>
           <button class="hidden" id="saveIdea">Save</button>
