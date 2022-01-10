@@ -4,7 +4,6 @@ class Idea {
     this.title = title || 'No title?';
     this.body = body || 'No good ideas?';
     this.starred = false;
-    this.comments = [];
   };
 
   updateIdea() {
