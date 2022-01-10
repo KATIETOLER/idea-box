@@ -1,14 +1,14 @@
 //---------------- Query Selectors -------------
-var titleInput = document.getElementById('title-input');
-var bodyInput = document.getElementById('body-input');
+var titleInput = document.getElementById('titleInput');
+var bodyInput = document.getElementById('bodyInput');
 var ideasGrid = document.querySelector('.saved-cards-grid');
 var userInputArea = document.querySelector('.user-input-area');
-var searchInput = document.getElementById('search-ideas');
+var searchInput = document.getElementById('searchIdeas');
 
 //--------------- Buttons ----------------
-var showAllBtn = document.getElementById('show-all-btn')
-var starredIdeasBtn = document.getElementById('starred-ideas');
-var saveIdeaBtn = document.getElementById('save-idea');
+var showAllBtn = document.getElementById('showAllBtn')
+var starredIdeasBtn = document.getElementById('starredIdeas');
+var saveIdeaBtn = document.getElementById('saveIdea');
 var inactiveSaveIdeaBtn = document.querySelector('.inactive-button')
 
 //---------------- GLobal Variables ------------
@@ -163,6 +163,6 @@ function insertRedStarCard(id, title, body) {
       <p class="comment-title">Comment</p>
     </div>
   </div>`;
-  
+
   return redStarCard;
 };

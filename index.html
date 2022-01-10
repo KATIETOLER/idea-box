@@ -5,41 +5,39 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <title>Idea Box</title>
   </head>
-  <!-- <div class="nav-style"> -->
     <nav class="nav-style">
       <h4>IdeaBox</h4>
       <div class="filter-box">
         <div class="filter-text-style">
           <p class="filter-text">Filter Starred Ideas</p>
-          <button class="nav-button" id="starred-ideas">Show Starred Ideas</button>
-          <button class="nav-button hidden" id="show-all-btn">Show All Ideas</button>
+          <button class="nav-button" id="starreIdeas">Show Starred Ideas</button>
+          <button class="nav-button hidden" id="showAllBtn">Show All Ideas</button>
         </div>
       </div>
     </nav>
-  <!-- </div> -->
   <body>
     <main>
       <form class="user-input-area">
           <label for="title">Title</label>
         <p>
-          <input type="text" class="inputs" id="title-input" maxlength="20">
+          <input type="text" class="inputs" id="titleInput" maxlength="20">
         </p>
           <label for="body">Body</label>
         <p>
-          <textarea type="text" class="inputs" id="body-input" maxlength="110"></textarea>
+          <textarea type="text" class="inputs" id="bodyInput" maxlength="110"></textarea>
         </p>
         <p>
-          <button class="hidden" id="save-idea">Save</button>
+          <button class="hidden" id="saveIdea">Save</button>
           <button class="inactive-button" disabled>Save</button>
         </p>
         <div class="search-bar">
           <button type="submit" class="search-button">
             <img src="./assets/search.svg" class="search-icon" alt="Search Icon"/>
           </button>
-          <input type="text" class="inputs" placeholder="Search ideas" id="search-ideas">
+          <input type="text" class="inputs" placeholder="Search ideas" id="searchIdeas">
         </div>
       </form>
-      <section id="card-area">
+      <section id="cardArea">
         <article class="saved-cards-grid"></article>
       </section>
     </main>
