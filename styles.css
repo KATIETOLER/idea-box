@@ -1,11 +1,10 @@
-*{
+* {
   font-family: "Open Sans", bold;
 }
 
 html {
   width: 100%;
   margin: -10px;
-  /* background-color: #A9AAD2; */
   background-color: #1F1F3D;
 }
 
