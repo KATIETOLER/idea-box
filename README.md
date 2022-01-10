@@ -2,7 +2,7 @@
 ___
 #### Overview
 
-Got a great idea and don't want to forget it? Introducing the ideas box application! Whether it's a lead for your next major invention to revolutionize the world, or a new, faster way to brush your teeth(eww you should definitely spend at least a minute though), the IdeaBox can help you keep track of your thoughts. Within the idea box, you have the ability to favorite certain ideas, and search for specific ideas using key words/phrases. Don't worry about ever losing a fantastic idea again!
+Got a great idea and don't want to forget it? Introducing the ideas box application! Whether it's a lead for your next major invention to revolutionize the world, or a new, faster way to brush your teeth(you should definitely spend at least a minute though), the IdeaBox can help you keep track of your thoughts. Within the idea box, you have the ability to favorite certain ideas, and search for specific ideas using key words/phrases. Don't worry about ever losing a fantastic idea again!
 
 ---
 #### Links
@@ -14,7 +14,7 @@ Got a great idea and don't want to forget it? Introducing the ideas box applicat
 * [George Lemmon](https://github.com/GALemmon)
 * [Katie Toler](https://github.com/KATIETOLER)
 ---
-#### :robot_face: Tech Used
+#### :robot: Tech Used
 * Javascript
 * CSS
 * HTML
@@ -24,7 +24,7 @@ The IdeaBox is simple to use. Follow the steps below to make full use of this sw
 __To save a new idea:__
 - In the input fields, enter a unique title, as well as an accompanying body. Remember, your idea can be about ANYTHING. This app can't judge, yet.
 - Once you've input both a title and body, hit the "Save" button below to save your idea.
-- an Idea card will be created directly below the text, and... Tadaaa! Your idea is now saved and visible in an easy to read format.
+- An Idea card will be created directly below the text, and... Tadaaa! Your idea is now saved and visible in an easy to read format.
 
 ![Submitting a New Idea](https://media1.giphy.com/media/CoYi9xZD3eayC5rrde/giphy.gif)
 
@@ -78,7 +78,15 @@ To view code on the text editor of your choice (we used atom to construct our co
 
 `Clone` [this repository](git@github.com:KATIETOLER/idea-box.git) in your terminal by entering using `git clone https://github.com/KATIETOLER/idea-box.git` and then `cd idea-box`. Run `atom .` to open the text files in your text editor.
 
+Use the command `open index.html` from the cloned repo in your terminal to open the website in your browser.
+
 ---
 #### Credits
 * [*Turing School of Software and Design*](turing.edu)
-*Our project manager [@twant](https://github.com/twant)
+* Our project manager, Taylor. [@twant](https://github.com/twant)
+* Our code reviewers:
+  * Kelly Zick [@misskelly](https://github.com/misskelly)
+  * Alyssa Bull [@alyssabull](https://github.com/alyssabull)
+  * Riley Martin [@RMartin0717](https://github.com/RMartin0717)
+
+Thank you so much!
