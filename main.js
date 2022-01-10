@@ -62,7 +62,7 @@ function search() {
   ideasGrid.innerHTML = '';
   var value = searchInput.value.toLowerCase();
   for (var i = 0; i < ideas.length; i++) {
-    if (ideas[i].title.includes(`${value}`) || ideas[i].body.includes(`${value}`)){
+    if (ideas[i].title.toLowerCase().includes(`${value}`) || ideas[i].body.toLowerCase().includes(`${value}`)){
       ideasGrid.innerHTML += insertCard(ideas[i]);
     };
   };
