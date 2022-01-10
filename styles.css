@@ -1,11 +1,10 @@
-*{
+* {
   font-family: "Open Sans", bold;
 }
 
 html {
   width: 100%;
   margin: -10px;
-  /* background-color: #A9AAD2; */
   background-color: #1F1F3D;
 }
 
@@ -131,7 +130,7 @@ section {
   border-top-color: #1F1F3D;
 }
 
-#card-area {
+#cardArea {
   margin-bottom: -5vw;
 }
 
@@ -143,8 +142,8 @@ section {
 
 label,
 .inputs,
-#body-input,
-#search-ideas {
+#bodyInput,
+#searchIdeas {
   width: 35vw;
 }
 
@@ -167,7 +166,7 @@ button {
   border-radius: .2vw;
 }
 
-#body-input {
+#bodyInput {
   border-width: .25vw;
   height: 10vw;
 }
@@ -194,7 +193,7 @@ button {
 
 }
 
-#search-ideas{
+#searchIdeas{
   height: 4.2vw;
   border-left: none;
 }
